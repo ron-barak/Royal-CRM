@@ -1,0 +1,48 @@
+<app-page-header title="review customer" description="review customer's details" icon="fa fa-user"></app-page-header>
+
+<div class="row">
+  <div class="col-12">
+    <p>
+      <a class="btn btn-secondary" routerLink="..">
+        <i class="fas fa-arrow-alt-circle-left"></i>
+        Back
+      </a>
+    </p>
+
+    <table *ngIf="customer$ | async as customer; else loading" class="table table-bordered">
+
+      <tr>
+        <td><b>First Name:</b></td>
+        <td>{{ customer.firstName }}</td>
+      </tr>
+      <tr>
+        <td><b>Last Name:</b></td>
+        <td>{{ customer.lastName }}</td>
+      </tr>
+      <tr>
+        <td><b>Email:</b></td>
+        <td>
+          <a [href]="'mailto:' + customer.email">{{ customer.email }}</a>
+        </td>
+      </tr>
+      <tr>
+        <td><b>Phone:</b></td>
+        <td>
+          <a [href]="'tel:' + customer.phone">{{ customer.phone }}</a>
+        </td>
+      </tr>
+      <tr>
+        <td><b>Address:</b></td>
+        <td>{{ customer.address }}</td>
+      </tr>
+      <tr>
+        <td><b>Notes:</b></td>
+        <td>{{ customer.notes }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <ng-template #loading>
+    <p><i>loading..</i></p>
+  </ng-template>
+</div>

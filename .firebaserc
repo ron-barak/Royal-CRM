@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "royal-bccdf": {
+      "hosting": {
+        "royal-crm": [
+          "royal-bccdf"
+        ]
+      }
+    }
+  }
+}
